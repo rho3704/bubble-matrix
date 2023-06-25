@@ -1,0 +1,773 @@
+const int rows = 4;
+const int cols = 4;
+
+int solenoidPins[rows][cols] = {
+  {1, 2, 3, 4},
+  {5, 6, 7, 8},
+  {9, 10, 11, 12},
+  {13, 14, 15, 16}
+};
+
+int letterE[rows][cols] = {
+  {1, 0, 1, 0},
+  {1, 0, 1, 0},
+  {1, 0, 1, 0},
+  {1, 0, 1, 0}
+};
+void spiral(int t)
+{
+
+  //t>=60
+   digitalWrite(solenoidPins[0][0], LOW);
+  delay(8);
+  digitalWrite(solenoidPins[0][0], HIGH);
+  delay(t);
+  digitalWrite(solenoidPins[0][1], LOW);
+  delay(15);
+  digitalWrite(solenoidPins[0][1], HIGH);
+  delay(t);
+  digitalWrite(solenoidPins[0][2], LOW);
+  delay(15);
+  digitalWrite(solenoidPins[0][2], HIGH);
+  delay(t);
+  digitalWrite(solenoidPins[0][3], LOW);
+  delay(15);
+  digitalWrite(solenoidPins[0][3], HIGH);
+  delay(t);
+  digitalWrite(solenoidPins[1][3], LOW);
+  delay(15);
+  digitalWrite(solenoidPins[1][3], HIGH);
+  delay(t);
+  digitalWrite(solenoidPins[2][3], LOW);
+  delay(15);
+  digitalWrite(solenoidPins[2][3], HIGH);
+  delay(t);
+  digitalWrite(solenoidPins[3][3], LOW);
+  delay(15);
+  digitalWrite(solenoidPins[3][3], HIGH);
+  delay(t);
+  digitalWrite(solenoidPins[3][2], LOW);
+  delay(15);
+  digitalWrite(solenoidPins[3][2], HIGH);
+  delay(40);
+  digitalWrite(solenoidPins[3][1], LOW);
+  delay(10);
+  digitalWrite(solenoidPins[3][1], HIGH);
+  delay(t);
+  digitalWrite(solenoidPins[3][0], LOW);
+  delay(10);
+  digitalWrite(solenoidPins[3][0], HIGH);
+  delay(t);
+  digitalWrite(solenoidPins[2][0], LOW);
+  delay(10);
+  digitalWrite(solenoidPins[2][0], HIGH);
+  delay(t);
+  digitalWrite(solenoidPins[1][0], LOW);
+  delay(10);
+  digitalWrite(solenoidPins[1][0], HIGH);
+  delay(t);
+}
+void stln()
+{
+    digitalWrite(solenoidPins[1][1], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[1][1], HIGH);
+    
+     delay(125);
+
+     
+    digitalWrite(solenoidPins[1][1], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[1][1], HIGH);
+ 
+
+     delay(125);
+}
+void ee()
+{
+    digitalWrite(solenoidPins[3][0], LOW);
+    digitalWrite(solenoidPins[1][0], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[3][0], HIGH);
+    digitalWrite(solenoidPins[1][0], HIGH);
+
+
+    delay(5);
+
+    
+    digitalWrite(solenoidPins[2][0], LOW);
+    digitalWrite(solenoidPins[0][0], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[2][0], HIGH);
+    digitalWrite(solenoidPins[0][0], HIGH);
+    
+    
+
+    delay(250);
+
+    
+    digitalWrite(solenoidPins[3][0], LOW);
+    delay(10);
+    digitalWrite(solenoidPins[3][0], HIGH);
+
+    
+    delay(300);
+
+    digitalWrite(solenoidPins[3][0], LOW);
+    digitalWrite(solenoidPins[1][0], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[3][0], HIGH);
+    digitalWrite(solenoidPins[1][0], HIGH);
+
+
+    delay(5);
+
+    
+    digitalWrite(solenoidPins[2][0], LOW);
+    digitalWrite(solenoidPins[0][0], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[2][0], HIGH);
+    digitalWrite(solenoidPins[0][0], HIGH);
+    
+    delay(200);
+    
+    digitalWrite(solenoidPins[3][0], LOW);
+    delay(10);
+    digitalWrite(solenoidPins[3][0], HIGH);
+
+    
+    delay(200);
+    
+    digitalWrite(solenoidPins[2][0], LOW);
+    digitalWrite(solenoidPins[0][0], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[2][0], HIGH);
+    digitalWrite(solenoidPins[0][0], HIGH);
+    
+    delay(5);
+    digitalWrite(solenoidPins[3][0], LOW);
+    digitalWrite(solenoidPins[1][0], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[3][0], HIGH);
+    digitalWrite(solenoidPins[1][0], HIGH);
+    
+    delay(1000);
+}
+void nn()
+{
+    digitalWrite(solenoidPins[0][3], LOW);
+    delay(1);
+    digitalWrite(solenoidPins[2][3], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[2][3], HIGH);
+    digitalWrite(solenoidPins[0][3], HIGH);
+    
+    delay(2);
+    digitalWrite(solenoidPins[3][3], LOW);
+    //digitalWrite(solenoidPins[1][3], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[3][3], HIGH);
+   // digitalWrite(solenoidPins[1][3], HIGH);
+
+    delay(300);
+
+    
+    digitalWrite(solenoidPins[3][3], LOW);
+    digitalWrite(solenoidPins[0][3], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[3][3], HIGH);
+    digitalWrite(solenoidPins[0][3], HIGH);
+    
+
+    delay(250);
+    digitalWrite(solenoidPins[1][3], LOW);
+    delay(10);
+    digitalWrite(solenoidPins[1][3], HIGH);
+    delay(100);
+    
+   digitalWrite(solenoidPins[3][3], LOW);
+    digitalWrite(solenoidPins[0][3], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[3][3], HIGH);
+    digitalWrite(solenoidPins[0][3], HIGH);
+    
+
+    delay(250);
+    digitalWrite(solenoidPins[3][3], LOW);
+    digitalWrite(solenoidPins[0][3], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[3][3], HIGH);
+    digitalWrite(solenoidPins[0][3], HIGH);
+    
+
+    delay(1000);
+}
+
+void aa()
+{
+    //digitalWrite(solenoidPins[0][3], LOW);
+    //delay(1);
+    digitalWrite(solenoidPins[2][3], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[2][3], HIGH);
+   // digitalWrite(solenoidPins[0][3], HIGH);
+    
+    delay(2);
+   // digitalWrite(solenoidPins[3][3], LOW);
+    digitalWrite(solenoidPins[1][3], LOW);
+    delay(15);
+    //digitalWrite(solenoidPins[3][3], HIGH);
+    digitalWrite(solenoidPins[1][3], HIGH);
+
+    delay(250);
+
+    
+    digitalWrite(solenoidPins[3][3], LOW);
+    digitalWrite(solenoidPins[0][3], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[3][3], HIGH);
+    digitalWrite(solenoidPins[0][3], HIGH);
+    
+
+    delay(250);
+    
+    digitalWrite(solenoidPins[0][3], LOW);
+    delay(1);
+    digitalWrite(solenoidPins[2][3], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[2][3], HIGH);
+    digitalWrite(solenoidPins[0][3], HIGH);
+    
+    delay(2);
+    digitalWrite(solenoidPins[3][3], LOW);
+    digitalWrite(solenoidPins[1][3], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[3][3], HIGH);
+    digitalWrite(solenoidPins[1][3], HIGH);
+    
+
+    delay(250);
+    digitalWrite(solenoidPins[3][3], LOW);
+    digitalWrite(solenoidPins[0][3], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[3][3], HIGH);
+    digitalWrite(solenoidPins[0][3], HIGH);
+    
+    delay(250);
+
+    
+    digitalWrite(solenoidPins[3][3], LOW);
+    digitalWrite(solenoidPins[0][3], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[3][3], HIGH);
+    digitalWrite(solenoidPins[0][3], HIGH);
+
+    delay(1000);
+}
+void vv()
+{
+  digitalWrite(solenoidPins[3][3], LOW);
+    digitalWrite(solenoidPins[0][3], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[3][3], HIGH);
+    digitalWrite(solenoidPins[0][3], HIGH);
+    
+
+    delay(300);
+    digitalWrite(solenoidPins[3][3], LOW);
+    digitalWrite(solenoidPins[0][3], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[3][3], HIGH);
+    digitalWrite(solenoidPins[0][3], HIGH);
+
+    delay(100);
+    
+    
+    digitalWrite(solenoidPins[2][3], LOW);
+    digitalWrite(solenoidPins[1][3], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[2][3], HIGH);
+    digitalWrite(solenoidPins[1][3], HIGH);
+    
+
+    delay(250);
+    digitalWrite(solenoidPins[2][3], LOW);
+    digitalWrite(solenoidPins[1][3], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[2][3], HIGH);
+    digitalWrite(solenoidPins[1][3], HIGH);
+
+    delay(1000);
+}
+void ss()
+{
+    digitalWrite(solenoidPins[3][0], LOW);
+    digitalWrite(solenoidPins[1][0], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[3][0], HIGH);
+    digitalWrite(solenoidPins[1][0], HIGH);
+
+
+    delay(5);
+
+    
+    digitalWrite(solenoidPins[2][0], LOW);
+    digitalWrite(solenoidPins[0][0], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[2][0], HIGH);
+    digitalWrite(solenoidPins[0][0], HIGH);
+    
+    
+
+    delay(250);
+
+    
+    digitalWrite(solenoidPins[3][0], LOW);
+    delay(10);
+    digitalWrite(solenoidPins[3][0], HIGH);
+
+    
+    delay(300);
+
+    digitalWrite(solenoidPins[3][0], LOW);
+    digitalWrite(solenoidPins[1][0], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[3][0], HIGH);
+    digitalWrite(solenoidPins[1][0], HIGH);
+
+
+    delay(5);
+
+    
+    digitalWrite(solenoidPins[2][0], LOW);
+    digitalWrite(solenoidPins[0][0], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[2][0], HIGH);
+    digitalWrite(solenoidPins[0][0], HIGH);
+    
+    delay(200);
+    
+    digitalWrite(solenoidPins[1][0], LOW);
+    delay(10);
+    digitalWrite(solenoidPins[1][0], HIGH);
+
+    
+    delay(200);
+    
+    digitalWrite(solenoidPins[2][0], LOW);
+    digitalWrite(solenoidPins[0][0], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[2][0], HIGH);
+    digitalWrite(solenoidPins[0][0], HIGH);
+    
+    delay(5);
+    digitalWrite(solenoidPins[3][0], LOW);
+    digitalWrite(solenoidPins[1][0], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[3][0], HIGH);
+    digitalWrite(solenoidPins[1][0], HIGH);
+    
+    delay(1000);
+}
+void ii()
+{
+    digitalWrite(solenoidPins[0][3], LOW);
+    delay(1);
+    digitalWrite(solenoidPins[2][3], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[2][3], HIGH);
+    digitalWrite(solenoidPins[0][3], HIGH);
+    
+    delay(5);
+    digitalWrite(solenoidPins[3][3], LOW);
+    digitalWrite(solenoidPins[1][3], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[3][3], HIGH);
+    digitalWrite(solenoidPins[1][3], HIGH);
+
+    delay(250);
+
+    digitalWrite(solenoidPins[2][3], LOW);
+    digitalWrite(solenoidPins[1][3], LOW);
+    delay(10);
+    digitalWrite(solenoidPins[2][3], HIGH);
+    digitalWrite(solenoidPins[1][3], HIGH);
+    
+
+    delay(450);
+
+     digitalWrite(solenoidPins[2][3], LOW);
+    digitalWrite(solenoidPins[1][3], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[2][3], HIGH);
+    digitalWrite(solenoidPins[1][3], HIGH);
+    
+
+    delay(250);
+
+    digitalWrite(solenoidPins[0][3], LOW);
+    delay(1);
+    digitalWrite(solenoidPins[2][3], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[2][3], HIGH);
+    digitalWrite(solenoidPins[0][3], HIGH);
+    
+    delay(5);
+    digitalWrite(solenoidPins[3][3], LOW);
+    digitalWrite(solenoidPins[1][3], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[3][3], HIGH);
+    digitalWrite(solenoidPins[1][3], HIGH);
+
+    delay(1000);
+}
+
+void gg()
+{
+    digitalWrite(solenoidPins[0][3], LOW);
+    delay(1);
+    digitalWrite(solenoidPins[2][3], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[2][3], HIGH);
+    digitalWrite(solenoidPins[0][3], HIGH);
+    
+    delay(5);
+    digitalWrite(solenoidPins[3][3], LOW);
+    digitalWrite(solenoidPins[1][3], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[3][3], HIGH);
+    digitalWrite(solenoidPins[1][3], HIGH);
+    
+    delay(330);
+    digitalWrite(solenoidPins[3][3], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[3][3], HIGH);
+    delay(250);
+    
+    digitalWrite(solenoidPins[0][3], LOW);
+    //delay(1);
+    //digitalWrite(solenoidPins[2][3], LOW);
+    delay(15);
+    //digitalWrite(solenoidPins[2][3], HIGH);
+    digitalWrite(solenoidPins[0][3], HIGH);
+    
+    delay(5);
+    digitalWrite(solenoidPins[3][3], LOW);
+    digitalWrite(solenoidPins[1][3], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[3][3], HIGH);
+    digitalWrite(solenoidPins[1][3], HIGH);
+    delay(250);
+
+    digitalWrite(solenoidPins[0][3], LOW);
+    delay(1);
+    digitalWrite(solenoidPins[2][3], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[2][3], HIGH);
+    digitalWrite(solenoidPins[0][3], HIGH);
+    
+    delay(5);
+    digitalWrite(solenoidPins[3][3], LOW);
+    digitalWrite(solenoidPins[1][3], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[3][3], HIGH);
+    digitalWrite(solenoidPins[1][3], HIGH);
+    delay(1000);
+    
+}
+void scurve()
+{
+  for(int i=0;i<4;i++)
+    {
+       if(i==0)
+      {
+     
+    
+    //delay(2);
+    digitalWrite(solenoidPins[3][i], LOW);
+    digitalWrite(solenoidPins[1][i], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[3][i], HIGH);
+    digitalWrite(solenoidPins[1][i], HIGH);
+
+    digitalWrite(solenoidPins[2][i], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[2][i], HIGH);
+    
+    delay(5);
+    digitalWrite(solenoidPins[0][i], LOW);
+    delay(11.3);
+    digitalWrite(solenoidPins[0][i], HIGH);
+
+    delay(250);
+    continue;
+      }
+     digitalWrite(solenoidPins[0][i], LOW);
+    delay(1);
+    digitalWrite(solenoidPins[2][i], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[2][i], HIGH);
+    digitalWrite(solenoidPins[0][i], HIGH);
+    
+    delay(5);
+    digitalWrite(solenoidPins[3][i], LOW);
+    digitalWrite(solenoidPins[1][i], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[3][i], HIGH);
+    digitalWrite(solenoidPins[1][i], HIGH);
+
+    delay(250);
+    }
+
+    for(int i=2;i>=0;i--)
+    {
+        digitalWrite(solenoidPins[0][i], LOW);
+    delay(1);
+    digitalWrite(solenoidPins[2][i], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[2][i], HIGH);
+    digitalWrite(solenoidPins[0][i], HIGH);
+    
+    delay(5);
+    digitalWrite(solenoidPins[3][i], LOW);
+    digitalWrite(solenoidPins[1][i], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[3][i], HIGH);
+    digitalWrite(solenoidPins[1][i], HIGH);
+
+    delay(250);
+    }
+}
+
+void patt(){
+  for(int i=0;i<4;i++)
+{
+  for(int j=0;j<4;j++)
+  {
+    if(i==0&&j==0)
+    {
+      digitalWrite(solenoidPins[i][j], LOW);
+    delay(7);
+    digitalWrite(solenoidPins[i][j], HIGH);
+    delay(100);
+    continue;
+    }
+    if(i==2&&j==2)
+    {
+      delay(25);
+      digitalWrite(solenoidPins[i][j], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[i][j], HIGH);
+    delay(100);
+    continue;
+    }
+    digitalWrite(solenoidPins[i][j], LOW);
+    delay(10);
+    digitalWrite(solenoidPins[i][j], HIGH);
+    delay(120);
+  }
+  for(int j=2;j>=0;j--)
+  {
+    if(i==0&&j==0)
+    {
+      digitalWrite(solenoidPins[i][j], LOW);
+    delay(7);
+    digitalWrite(solenoidPins[i][j], HIGH);
+    delay(120);
+    continue;
+    }
+    if(i==2&&j==2)
+    {
+      delay(30);
+      digitalWrite(solenoidPins[i][j], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[i][j], HIGH);
+    delay(120);
+    continue;
+    }
+    digitalWrite(solenoidPins[i][j], LOW);
+    delay(10);
+    digitalWrite(solenoidPins[i][j], HIGH);
+    delay(120);
+  }
+}
+    
+delay(100);
+}
+
+void patt2()
+{
+  for(int i=3;i<4;i++)
+{
+  for(int j=0;j<4;j++)
+  {
+    if(i==0&&j==0)
+    {
+      digitalWrite(solenoidPins[i][j], LOW);
+    delay(7);
+    digitalWrite(solenoidPins[i][j], HIGH);
+    delay(100);
+    continue;
+    }
+    if(i==2&&j==2)
+    {
+      delay(25);
+      digitalWrite(solenoidPins[i][j], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[i][j], HIGH);
+    delay(100);
+    continue;
+    }
+    digitalWrite(solenoidPins[i][j], LOW);
+    delay(10);
+    digitalWrite(solenoidPins[i][j], HIGH);
+    delay(120);
+  }
+  delay(150);
+  for(int j=3;j>=0;j--)
+  {
+    if(i==0&&j==0)
+    {
+      digitalWrite(solenoidPins[i][j], LOW);
+    delay(7);
+    digitalWrite(solenoidPins[i][j], HIGH);
+    delay(120);
+    continue;
+    }
+    if(i==2&&j==2)
+    {
+      delay(30);
+      digitalWrite(solenoidPins[i][j], LOW);
+    delay(15);
+    digitalWrite(solenoidPins[i][j], HIGH);
+    delay(120);
+    continue;
+    }
+    digitalWrite(solenoidPins[i][j], LOW);
+    delay(10);
+    digitalWrite(solenoidPins[i][j], HIGH);
+    delay(120);
+  }
+  delay(150);
+}
+    
+delay(100);
+}
+void patt3()
+{
+   //digitalWrite(solenoidPins[2][1], LOW);
+    //digitalWrite(solenoidPins[1][2], LOW);
+    digitalWrite(solenoidPins[3][0], LOW);
+    digitalWrite(solenoidPins[0][3], LOW);
+    delay(15);
+   // digitalWrite(solenoidPins[2][1], HIGH);
+    //digitalWrite(solenoidPins[1][2], HIGH);
+    digitalWrite(solenoidPins[3][0], HIGH);
+    digitalWrite(solenoidPins[0][3], HIGH);
+    delay(120);
+    //digitalWrite(solenoidPins[2][1], LOW);
+    //digitalWrite(solenoidPins[1][2], LOW);
+    digitalWrite(solenoidPins[3][3], LOW);
+    digitalWrite(solenoidPins[0][0], LOW);
+    delay(15);
+   // digitalWrite(solenoidPins[2][1], HIGH);
+    //digitalWrite(solenoidPins[1][2], HIGH);
+    digitalWrite(solenoidPins[3][3], HIGH);
+    digitalWrite(solenoidPins[0][0], HIGH);
+    delay(120);
+}
+void final()
+{
+   int t = 70;
+ ee();
+ nn();
+ vv();
+ ii();
+ ss();
+ aa();
+ gg();
+ ee();
+ ee();
+ nn();
+ vv();
+ ii();
+ ss();
+ aa();
+ gg();
+ ee();
+ delay(1000);
+ 
+ spiral(t);
+ spiral(t);
+ spiral(t);
+ spiral(t);
+ spiral(t);
+ spiral(t);
+ spiral(t);
+ scurve();
+ scurve();
+ scurve();
+ scurve();
+ scurve();
+ scurve();
+ patt();
+ patt();
+ patt();
+ patt();
+ patt2();
+ patt2();
+ patt2();
+ patt2();
+ patt2();
+ delay(1000);
+ ee();
+ nn();
+ vv();
+ ii();
+ ss();
+ aa();
+ gg();
+ ee();
+ ee();
+ nn();
+ ee();
+ vv();
+ ii();
+ ss();
+ aa();
+ gg();
+}
+int letterE1[rows][cols] = {
+  {1, 0, 1, 0},
+  {1, 0, 1, 0},
+  {1, 0, 1, 0},
+  {1, 0, 1, 0}
+};
+
+void setup() {
+  for (int i = 0; i < rows; i++) {
+    for (int j = 0; j < cols; j++) {
+      pinMode(solenoidPins[i][j], OUTPUT);
+    }
+  }
+  for (int i = 0; i < rows; i++) {
+    for (int j = 0; j < cols; j++) {
+        digitalWrite(solenoidPins[i][j], HIGH);
+    }
+  }
+}
+
+void loop() {
+
+//      for (int i = 0; i < 4; i++) {
+//    for (int j = 0; j < 4; j++) {
+//      
+//        digitalWrite(solenoidPins[i][j], LOW);
+//        delay(100);
+//        digitalWrite(solenoidPins[i][j], HIGH);
+//        delay(100);
+//    }
+//  }
+//  delay(100);
+final();
+}
